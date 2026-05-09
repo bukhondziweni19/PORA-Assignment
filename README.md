@@ -1,5 +1,5 @@
 # Signature-Informed Transformer for Portfolio Optimisation
-## Replication and Extension — PORA9X1 Group Project
+## Replication and Extension: PORA9X1 Group Project
 
 ### Overview
 
@@ -26,13 +26,13 @@ return paths and market crises.
 
 We conduct a horse race comparing five training objectives:
 
-| Model        | Objective                    | Reference                       |
-
-| CVaR         | Conditional Value at Risk    | Rockafellar and Uryasev (2000) |
-| AvgDD        | Average Drawdown             | Cajas (2025, Chapter 7)        |
-| CDaR         | Conditional Drawdown at Risk | Chekhlov et al. (2005)         |
-| UlcerIndex   | Root Mean Square Drawdown    | Martin and McCann (1989)       |
-| SmoothMaxDD  | Differentiable Max Drawdown  | Magdon-Ismail and Atiya (2004) |
+| Model | Objective | Reference |
+|---|---|---|
+| CVaR | Conditional Value at Risk | Rockafellar and Uryasev (2000) |
+| AvgDD | Average Drawdown | Cajas (2025, Chapter 7) |
+| CDaR | Conditional Drawdown at Risk | Chekhlov et al. (2005) |
+| UlcerIndex | Root Mean Square Drawdown | Martin and McCann (1989) |
+| SmoothMaxDD | Differentiable Max Drawdown | Magdon-Ismail and Atiya (2004) 
 
 ---
 
@@ -63,20 +63,21 @@ and 50 stocks.
 Four stocks were replaced due to delistings or insufficient
 price history:
 
-|Original| Replacement| Reason |
-
-| BCR | BSX | BCR delisted after BDX acquisition in 2017     |
-| K   | CPB | K acquired by Mars in August 2024              |
-| MMC | CB  | MMC had data gaps on Yahoo Finance around 2000 |
-| PSX | OXY | PSX only listed from May 2012                  |
+| Original | Replacement | Reason |
+|---|---|---|
+| BCR | BSX | BCR delisted after BDX acquisition in 2017 |
+| K | CPB | K acquired by Mars in August 2024 |
+| MMC | CB | MMC had data gaps on Yahoo Finance around 2000 |
+| PSX | OXY | PSX only listed from May 2012 |
 
 Data split follows the original paper exactly:
 
-| Split      | Period                   | Duration |
+| Split | Period | Duration |
+|---|---|---|
+| Training | 2000-01-01 to 2016-12-31 | 17 years |
+| Validation | 2017-01-01 to 2019-12-31 | 3 years |
+| Test | 2020-01-01 to 2024-12-31 | 5 years |
 
-| Training   | 2000-01-01 to 2016-12-31 | 17 years |
-| Validation | 2017-01-01 to 2019-12-31 | 3 years  |
-| Test       | 2020-01-01 to 2024-12-31 | 5 years  |
 
 The test period covers the COVID-19 crash, post-crisis
 recovery, the 2022 Federal Reserve rate shock, and the
@@ -164,18 +165,17 @@ limitation in the final report.
 
 All models are evaluated on nine metrics:
 
-| Metric                | Direction        | Description                                  |
-
-| Annualised Return     | Higher is better | Geometric mean annual return                 |
-| Annualised Volatility | Lower is better  | Daily std scaled to annual                   |
-| Sharpe Ratio          | Higher is better | Excess return per unit of total risk         |
-| Sortino Ratio         | Higher is better | Excess return per unit of downside risk only |
-| Maximum Drawdown      | Lower is better  | Largest peak-to-trough decline               |
-| Calmar Ratio          | Higher is better | Annualised return divided by max drawdown    |
-| Ulcer Index           | Lower is better  | Root mean square of all drawdowns            |
-| Time Underwater       | Lower is better  | Fraction of days below previous peak         |
-| Turnover              | Lower is better  | Average daily portfolio reallocation         |
-
+| Metric | Direction | Description |
+|---|---|---|
+| Annualised Return | Higher is better | Geometric mean annual return |
+| Annualised Volatility | Lower is better | Daily std scaled to annual |
+| Sharpe Ratio | Higher is better | Excess return per unit of total risk |
+| Sortino Ratio | Higher is better | Excess return per unit of downside risk only |
+| Maximum Drawdown | Lower is better | Largest peak-to-trough decline |
+| Calmar Ratio | Higher is better | Annualised return divided by max drawdown |
+| Ulcer Index | Lower is better | Root mean square of all drawdowns |
+| Time Underwater | Lower is better | Fraction of days below previous peak |
+| Turnover | Lower is better | Average daily portfolio reallocation |
 ---
 
 ### Robustness Framework
@@ -218,15 +218,6 @@ Three crisis periods evaluated:
 The SIT-CVaR model achieves a 54 percent improvement in
 Sharpe ratio over the equal weight benchmark at the 50
 stock scale, confirming the original paper's central claim.
-
-The SIT-CVaR model achieves a 54 percent improvement in
-Sharpe ratio over the equal weight benchmark at the 50
-stock scale, confirming the original paper's central claim.
-
-The SIT-CVaR model achieves a 54 percent improvement in
-Sharpe ratio over the equal weight benchmark at the 50
-stock scale, confirming the original paper's central claim.
-
 ---
 
 ### Requirements

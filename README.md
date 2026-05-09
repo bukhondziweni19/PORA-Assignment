@@ -207,14 +207,17 @@ Three crisis periods evaluated:
 
 ### Preliminary Results (50 Stocks)
 
-| Metric            | CVaR SIT| Equal Weight         |
+| Metric | CVaR SIT | Equal Weight |
+|:---|:---:|:---:|
+| Annualised Return | 15.23% | Reported positive |
+| Sharpe Ratio | 0.5863 | 0.3801 |
+| Max Drawdown | 29.97% | 38.56% |
+| Sortino Ratio | 0.8269 | Not reported |
+| Ulcer Index | 5.15% | 8.94% |
 
-| Annualised Return | 15.23% | Reported positive     |
-| Sharpe Ratio      | 0.5863 | 0.3801                |
-| Max Drawdown      | 29.97% | 38.56%                |
-| Sortino Ratio     | 0.8269 | Not reported          |
-| Ulcer Index       | 5.15%  | 8.94%                 |
-
+The SIT-CVaR model achieves a 54 percent improvement in
+Sharpe ratio over the equal weight benchmark at the 50
+stock scale, confirming the original paper's central claim.
 
 The SIT-CVaR model achieves a 54 percent improvement in
 Sharpe ratio over the equal weight benchmark at the 50
